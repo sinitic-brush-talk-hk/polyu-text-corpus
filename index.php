@@ -277,10 +277,11 @@ function update() {
 
 	const startTime = performance.now();
 	const applicableContentForSearch = content.filter(row => 
-		row.content_type === 'sentence' || 
-		row.content_type === 'en2' || 
-		row.content_type === 'jp2' || 
-		row.content_type === 'en3'
+		row.content_type === 'sentence'
+		// row.content_type === 'sentence' || 
+		// row.content_type === 'en2' || 
+		// row.content_type === 'jp2' || 
+		// row.content_type === 'en3'
 	);
 	const rowIds = applicableContentForSearch.filter(row => row.content[0].toLowerCase().includes(q)).map(row => [row.source_id, row.sentence_id]);
 	const rowIds2 = new Set(rowIds.map(row => row[0] + '-' + row[1]));
