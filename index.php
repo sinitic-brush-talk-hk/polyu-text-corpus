@@ -105,13 +105,51 @@ class CorpusSearchResultList extends HTMLElement {
 		} else {
 			paginate.insertAdjacentHTML('beforeend', `<a class="search_page disabled">上一頁</a>`);
 		}
-		for (let i = 1; i <= numPages; i++) {
+
+		let startRange = this.page - 4;
+		let endRange = this.page + 4;
+
+		if (this.page > 4 && this.page < numPages - 3) {
+			startRange = this.page - 1;
+			endRange = this.page + 1;
+		} else if (this.page < 5) {
+			startRange = 1;
+			endRange = 5;
+		} else if (this.page > numPages - 4) {
+			startRange = numPages - 4;
+			endRange = numPages;
+		}
+
+		if (startRange < 1) {
+			startRange = 1;
+		}
+
+		if (endRange > numPages) {
+			endRange = numPages;
+		}
+
+		if (startRange != 1) {
+			paginate.insertAdjacentHTML('beforeend', `<a class=search_page data-page="1">1</a>`);
+			if (startRange > 2) {
+				paginate.insertAdjacentHTML('beforeend', `<a class="search_page disabled">...</a>`);
+			}
+		}
+
+		for (let i = startRange; i <= endRange; i++) {
 			if (i == this.page) {
 				paginate.insertAdjacentHTML('beforeend', `<a class="search_page selected" data-page="${i}">${i}</a>`);
 			} else {
 				paginate.insertAdjacentHTML('beforeend', `<a class=search_page data-page="${i}">${i}</a>`);
 			}
 		}
+
+		if (endRange != numPages) {
+			if (endRange < numPages - 1) {
+				paginate.insertAdjacentHTML('beforeend', `<a class="search_page disabled">...</a>`);
+			}
+			paginate.insertAdjacentHTML('beforeend', `<a class=search_page data-page="${numPages}">${numPages}</a>`);
+		}
+
 		if ((this.page + 1) <= numPages) {
 			paginate.insertAdjacentHTML('beforeend', `<a class=search_page data-page="${this.page + 1}">下一頁</a>`);
 		} else {
