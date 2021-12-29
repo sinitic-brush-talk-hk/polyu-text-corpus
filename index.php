@@ -30,8 +30,9 @@ class CorpusSearchResultList extends HTMLElement {
 		this.numPerPage = 20;
 	}
 
-	setData(data, elapsedTime) {
+	setData(query, data, elapsedTime) {
 		this.page = 1;
+		this.query = query;
 		this.data = data;
 		this.elapsedTime = elapsedTime;
 		if (this.initialized) {
@@ -62,6 +63,8 @@ class CorpusSearchResultList extends HTMLElement {
 
 	render() {
 		const rowIds = this.data;
+
+		const query = this.query;
 
 		const info1 = this.querySelectorAll('.search_result_info')[0];
 		const info2 = this.querySelectorAll('.search_result_info')[1];
@@ -145,7 +148,7 @@ class CorpusSearchResultList extends HTMLElement {
 		rowIds.slice(start, end).forEach(([source_id, sentence_id]) => {
 			const sentenceData = content.filter(row => row.source_id == source_id && row.sentence_id == sentence_id);
 			const html = document.createElement('corpus-sentence');
-			html.setData(sentenceData);
+			html.setData(query, sentenceData);
 			list.appendChild(html);
 		});
 
@@ -159,7 +162,8 @@ class CorpusSentence extends HTMLElement {
 		this.initialized = false;
 	}
 
-	setData(data) {
+	setData(query, data) {
+		this.query = query;
 		this.data = data
 	}
 
@@ -187,11 +191,13 @@ class CorpusSentence extends HTMLElement {
 		let html = '';
 		html += '<div class=sentence>';
 		html += '<div class=sentence_id>' + mainSentence[0].sentence_id + '</div>';
-		html += '<div class=sentence_sentence>' + mainSentence[0].content[0] + '</div>';
+		html += '<div class=sentence_sentence></div>';
 		html += '<div class=sentence_expand><button>顯示資料</button></div>';
 		html += '<div class=sentence_analysis hidden></div>';
 		html += '</div>';
 		this.innerHTML = html;
+		this.querySelector('.sentence_sentence').innerHTML = 
+			htmlspecialchars(mainSentence[0].content[0]).replace(this.query, '<span class=match>' + this.query + '</span>');
 	}
 
 	renderAnalysis() {
@@ -277,7 +283,7 @@ function update() {
 
 	result.textContent = '';
 	const resultsList = document.createElement('corpus-search-result-list');
-	resultsList.setData(rowIds3, elapsedTime);
+	resultsList.setData(q, rowIds3, elapsedTime);
 	result.appendChild(resultsList);
 }
 

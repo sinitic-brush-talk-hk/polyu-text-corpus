@@ -38,3 +38,5 @@ corpus-search-result-list{display:grid;grid-template-columns:auto 1fr}
 .search_result_paginate a.selected{color:#fff;background-color:#007bff;border-color: #007bff;}
 
 corpus-sentence{display:block}
+
+.match{color:red;background:#fcf8e3;padding:2px}
