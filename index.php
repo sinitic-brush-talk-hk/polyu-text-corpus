@@ -9,7 +9,8 @@ $allContent = Content::getAll();
 <!doctype html>
 <meta charset=utf-8>
 <title>User Site</title>
-<link href="style.css" rel=stylesheet>
+<!--link href="style.css" rel=stylesheet-->
+<style><?=file_get_contents('style.css')?></style>
 <body class=client>
 
 <div class=content>
