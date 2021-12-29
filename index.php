@@ -197,7 +197,7 @@ class CorpusSentence extends HTMLElement {
 		html += '</div>';
 		this.innerHTML = html;
 		this.querySelector('.sentence_sentence').innerHTML = 
-			htmlspecialchars(mainSentence[0].content[0]).replace(this.query, '<span class=match>' + this.query + '</span>');
+			htmlspecialchars(mainSentence[0].content[0]).replaceAll(this.query, '<span class=match>' + this.query + '</span>');
 	}
 
 	renderAnalysis() {
