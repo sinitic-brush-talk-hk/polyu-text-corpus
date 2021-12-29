@@ -3,22 +3,7 @@ declare(strict_types = 1);
 require 'lib.php';
 
 $allSources = Source::getAll();
-
-$content = Content::getAll();
-$allContent = [];
-
-while (count($allContent) < 12000) {
-	$list = [];
-	foreach ($content as $row) {
-		$row = clone($row);
-		$row->sentence_id += count($allContent);
-		$list[] = $row;
-	}
-	$allContent = array_merge($allContent, $list);
-	unset($list);
-}
-
-$allContent = array_slice($allContent, 0, 12000);
+$allContent = Content::getAll();
 
 ?>
 <!doctype html>
