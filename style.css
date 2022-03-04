@@ -1,5 +1,5 @@
 /* Reset */
-body{font-family:Arial,sans-serif;line-height:1.4}
+body{font-family:Arial,sans-serif;line-height:1.4;margin:0}
 th{text-align:inherit;vertical-align:top}
 td{vertical-align:top}
 [hidden]{display:none}
@@ -20,6 +20,13 @@ tr:nth-child(2n){background:#eee}
 
 /* Client */
 .client{background:rgb(237 226 194)}
+.center_wrap{max-width:980px;margin:0 auto}
+
+header{background:white;padding:20px}
+header>.center_wrap{display:grid;grid-template-columns: auto 1fr;gap:20px}
+#logo{width:400px;height:80px}
+nav{justify-self:end}
+
 .content{display:grid;grid-template-columns:280px 1fr;gap:20px}
 
 aside input{padding:12px;font-size:20px;border:1px solid #ccc;border-radius:4px;width:280px;box-sizing:border-box;display:block}

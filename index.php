@@ -13,6 +13,21 @@ $allContent = Content::getAll();
 <style><?=file_get_contents('style.css')?></style>
 <body class=client>
 
+<header>
+	<div class=center_wrap>
+		<div id=logo>
+			(Logo)
+		</div>
+		<nav>
+			<a href="index.html">Corpus Search</a>
+			<a href="about-us.html">About Us</a>
+			<a href="introduction.html">Introduction</a>
+			<a href="user-guide.html">User Guide</a>
+			<a href="contact-us.html">Contact Us</a>
+		</nav>
+	</div>
+</header>
+
 <div class=content>
 	<aside>
 		<input type=text id=filter placeholder="輸入字詞">
