@@ -29,13 +29,15 @@ $allContent = Content::getAll();
 </header>
 
 <div class=content>
-	<aside>
-		<input type=text id=filter placeholder="輸入字詞">
-	</aside>
+	<div class=center_wrap>
+		<aside>
+			<input type=text id=filter placeholder="輸入字詞">
+		</aside>
 
-	<main>
-		<div id=result></div>
-	</main>
+		<main>
+			<div id=result></div>
+		</main>
+	</div>
 </div>
 <script>
 class CorpusSearchResultList extends HTMLElement {

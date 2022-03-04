@@ -27,7 +27,8 @@ header>.center_wrap{display:grid;grid-template-columns: auto 1fr;gap:20px}
 #logo{width:400px;height:80px}
 nav{justify-self:end}
 
-.content{display:grid;grid-template-columns:280px 1fr;gap:20px}
+.content{padding:20px}
+.content>.center_wrap{display:grid;grid-template-columns:280px 1fr;gap:20px}
 
 aside input{padding:12px;font-size:20px;border:1px solid #ccc;border-radius:4px;width:280px;box-sizing:border-box;display:block}
 main{background:#fff;padding:32px;border-radius:20px}
