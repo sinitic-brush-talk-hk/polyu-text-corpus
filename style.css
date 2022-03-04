@@ -18,15 +18,15 @@ tr:nth-child(2n){background:#eee}
 .sentence_analysis{grid-column:2;overflow:auto}
 .sentence_analysis td{white-space:nowrap}
 
-/* Client */
-.client{background:rgb(237 226 194)}
+/* Client (Shared) */
 .center_wrap{max-width:980px;margin:0 auto}
-
 header{background:white;padding:20px}
 header>.center_wrap{display:grid;grid-template-columns: auto 1fr;gap:20px}
 #logo{width:400px;height:80px}
 nav{justify-self:end}
 
+/* Corpus Page */
+.client{background:rgb(237 226 194)}
 .content{padding:20px}
 .content>.center_wrap{display:grid;grid-template-columns:280px 1fr;gap:20px}
 
@@ -48,3 +48,8 @@ corpus-search-result-list{display:grid;grid-template-columns:auto 1fr}
 corpus-sentence{display:block}
 
 .match{color:red;background:#fcf8e3;padding:2px}
+
+/* Static Page */
+.page{background:#def}
+.page_content{padding:20px}
+.page_content h1{margin-top:0}
