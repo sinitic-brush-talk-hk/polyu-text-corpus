@@ -15,7 +15,7 @@ $allContent = Content::getAll();
 
 <div class=content>
 	<aside>
-		<input type=text id=filter>
+		<input type=text id=filter placeholder="輸入字詞">
 	</aside>
 
 	<main>
