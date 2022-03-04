@@ -286,9 +286,8 @@ function update() {
 
 	const startTime = performance.now();
 	const applicableContentForSearch = content.filter(row => 
-		row.content_type === 'sentence'
-		// row.content_type === 'sentence' || 
-		// row.content_type === 'en2' || 
+		row.content_type === 'sentence' || 
+		row.content_type === 'en2'
 		// row.content_type === 'jp2' || 
 		// row.content_type === 'en3'
 	);
