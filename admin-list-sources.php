@@ -24,7 +24,7 @@ foreach ($sources as $source) {
 	echo '<td>';
 	if ($source->path !== null) {
 		echo '<a href="./sources/' . urlencode($source->path) . '" download>Download</a> ';
-		echo '<a href="./admin-import.php?source=' . urlencode($source->id) . '">Import</a> ';
+		echo '<a href="./admin-import.php?source=' . urlencode((string) $source->id) . '">Import</a> ';
 	}
 	echo '</td>';
 	echo '</tr>';
