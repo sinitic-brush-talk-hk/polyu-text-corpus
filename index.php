@@ -234,7 +234,13 @@ class CorpusSentence extends HTMLElement {
 			html += '<tr>';
 			html += '<td>' + htmlspecialchars(row.content_type) + '</td>';
 			if (row.content.length === 1) {
-				html += '<td colspan="' + maxCols + '">' + htmlspecialchars(row.content[0]) + '</td>';
+				if (row.content_type == 'en2') {
+					html += '<td colspan="' + maxCols + '">';
+					html += htmlspecialchars(row.content[0]).split(this.query).join('<span class=match>' + this.query + '</span>');
+					html += '</td>';
+				} else {
+					html += '<td colspan="' + maxCols + '">' + htmlspecialchars(row.content[0]) + '</td>';
+				}
 			} else {
 				row.content.forEach(cell => {
 					html += '<td>' + htmlspecialchars(cell) + '</td>';
