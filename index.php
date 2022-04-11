@@ -32,7 +32,9 @@ $allContent = Content::getAll();
 <div class=content>
 	<div class=center_wrap>
 		<aside>
-			<input type=text id=filter placeholder="輸入字詞">
+			<input type=text id=filter placeholder="關鍵詞">
+			<div class=filter_desc>輸入字、詞或拼音</div>
+			<div class=update_desc>(瀏覽最新版本，請先清除「瀏覽記錄」)</div>
 		</aside>
 
 		<main>
@@ -81,6 +83,7 @@ class CorpusSearchResultList extends HTMLElement {
 			}
 		});
 		this.innerHTML =
+			'<h1>語料檢索</h1>' +
 			'<div class=search_result_info></div>' +
 			'<div class=search_result_export></div>' +
 			'<div class=search_result_list></div>' +
@@ -324,7 +327,7 @@ function update() {
 	const q = filter.value.toLowerCase();
 
 	if (q === '') {
-		result.textContent = 'Please type something.';
+		result.innerHTML = '<h1>語料檢索</h1>' + '請輸入關鍵詞';
 		return;
 	}
 
