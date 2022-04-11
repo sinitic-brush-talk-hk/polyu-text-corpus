@@ -11,6 +11,7 @@ $allContent = Content::getAll();
 <title>User Site</title>
 <!--link href="style.css" rel=stylesheet-->
 <style><?=file_get_contents('style.css')?></style>
+<script src="dist/xlsx.mini.min.js"></script>
 <body class=client>
 
 <header>
@@ -47,6 +48,10 @@ class CorpusSearchResultList extends HTMLElement {
 		this.numPerPage = 20;
 	}
 
+	setSources(sources) {
+		this.sources = sources;
+	}
+
 	setData(query, data, elapsedTime) {
 		this.page = 1;
 		this.query = query;
@@ -69,9 +74,15 @@ class CorpusSearchResultList extends HTMLElement {
 				this.page = page;
 				this.render();
 			}
+
+			const exportBtn = e.target.closest('button.search_export');
+			if (exportBtn) {
+				this.exportResults();
+			}
 		});
 		this.innerHTML =
 			'<div class=search_result_info></div>' +
+			'<div class=search_result_export></div>' +
 			'<div class=search_result_list></div>' +
 			'<div class=search_result_info></div>' +
 			'<div class=search_result_paginate></div>';
@@ -83,6 +94,7 @@ class CorpusSearchResultList extends HTMLElement {
 
 		const query = this.query;
 
+		const exportDiv = this.querySelectorAll('.search_result_export')[0];
 		const info1 = this.querySelectorAll('.search_result_info')[0];
 		const info2 = this.querySelectorAll('.search_result_info')[1];
 		const list = this.querySelectorAll('.search_result_list')[0];
@@ -102,6 +114,8 @@ class CorpusSearchResultList extends HTMLElement {
 
 		info1.textContent = `現在顯示 ${rowIds.length} 結果中 ${start + 1} 到 ${Math.min(end, rowIds.length)} 項`;
 		info2.textContent = `現在顯示 ${rowIds.length} 結果中 ${start + 1} 到 ${Math.min(end, rowIds.length)} 項`;
+
+		exportDiv.innerHTML = '<button type=button class=search_export>下載至 Excel</button>';
 
 		paginate.innerHTML = '';
 		list.innerHTML = '';
@@ -170,6 +184,32 @@ class CorpusSearchResultList extends HTMLElement {
 		});
 
 		list.insertAdjacentHTML('beforeend', `<div>Query completed in ${this.elapsedTime} ms</div>`);
+	}
+
+	exportResults() {
+		const aoa = [];
+		aoa.push(['出處', '2010頁碼', '2016頁碼', '內文（上一句）', '內文', '內文（下一句）']);
+		this.data.forEach(([source_id, sentence_id]) => {
+			const sentenceData = content.filter(row => row.source_id == source_id && row.sentence_id == sentence_id);
+			const prevSentence = content.filter(row => row.source_id == source_id && row.sentence_id == +sentence_id - 1);
+			const nextSentence = content.filter(row => row.source_id == source_id && row.sentence_id == +sentence_id + 1);
+
+			const sourceName = this.sources.find(o => o.id == source_id).name;
+			const page2010 = sentenceData.find(row => row.content_type === '2010頁碼').content[0];
+			const page2016 = sentenceData.find(row => row.content_type === '2016頁碼').content[0];
+
+			const prevText = prevSentence && prevSentence[0] ? prevSentence[0].content : '-';
+			const thisText = sentenceData[0].content;
+			const nextText = nextSentence && nextSentence[0] ? nextSentence[0].content : '-';
+
+			const row = [sourceName, page2010, page2016, prevText, thisText, nextText];
+
+			aoa.push(row);
+		});
+		const workbook = XLSX.utils.book_new();
+		const worksheet = XLSX.utils.aoa_to_sheet(aoa, {});
+		XLSX.utils.book_append_sheet(workbook, worksheet, 'BrushTalkConcordance');
+		XLSX.writeFile(workbook, "BrushTalkConcordance.xlsx");
 	}
 }
 
@@ -305,6 +345,7 @@ function update() {
 
 	result.textContent = '';
 	const resultsList = document.createElement('corpus-search-result-list');
+	resultsList.setSources(sources);
 	resultsList.setData(q, rowIds3, elapsedTime);
 	result.appendChild(resultsList);
 }
