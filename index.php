@@ -191,23 +191,22 @@ class CorpusSearchResultList extends HTMLElement {
 
 	exportResults() {
 		const aoa = [];
-		aoa.push(['出處', '2010頁碼', '2016頁碼', '內文（上一句）', '內文', '內文（下一句）']);
+		aoa.push(['出處', '2010頁碼', '2016頁碼', '內文', '內文（關鍵詞）', '內文']);
 		this.data.forEach(([source_id, sentence_id]) => {
 			const sentenceData = content.filter(row => row.source_id == source_id && row.sentence_id == sentence_id);
-			const prevSentence = content.filter(row => row.source_id == source_id && row.sentence_id == +sentence_id - 1);
-			const nextSentence = content.filter(row => row.source_id == source_id && row.sentence_id == +sentence_id + 1);
 
 			const sourceName = this.sources.find(o => o.id == source_id).name;
 			const page2010 = sentenceData.find(row => row.content_type === '2010頁碼').content[0];
 			const page2016 = sentenceData.find(row => row.content_type === '2016頁碼').content[0];
 
-			const prevText = prevSentence && prevSentence[0] ? prevSentence[0].content : '-';
-			const thisText = sentenceData[0].content;
-			const nextText = nextSentence && nextSentence[0] ? nextSentence[0].content : '-';
-
-			const row = [sourceName, page2010, page2016, prevText, thisText, nextText];
-
-			aoa.push(row);
+			const thisText = this.query;
+			const textChunks = sentenceData[0].content.split(thisText);
+			for (let i = 0; i < thisTextChunks.length - 1; i++) {
+				const prevText = textChunks[i];
+				const nextText = textChunks[i];
+				const row = [sourceName, page2010, page2016, prevText, thisText, nextText];
+				aoa.push(row);
+			}
 		});
 		const workbook = XLSX.utils.book_new();
 		const worksheet = XLSX.utils.aoa_to_sheet(aoa, {});
