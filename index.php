@@ -200,10 +200,10 @@ class CorpusSearchResultList extends HTMLElement {
 			const page2016 = sentenceData.find(row => row.content_type === '2016頁碼').content[0];
 
 			const thisText = this.query;
-			const textChunks = sentenceData[0].content.split(thisText);
-			for (let i = 0; i < thisTextChunks.length - 1; i++) {
-				const prevText = textChunks[i];
-				const nextText = textChunks[i];
+			const textChunks = sentenceData[0].content[0].split(thisText);
+			for (let i = 0; i < textChunks.length - 1; i++) {
+				const prevText = textChunks.slice(0, i + 1).join(thisText);
+				const nextText = textChunks.slice(i + 1).join(thisText);
 				const row = [sourceName, page2010, page2016, prevText, thisText, nextText];
 				aoa.push(row);
 			}
