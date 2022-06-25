@@ -64,11 +64,16 @@ corpus-sentence{display:block}
 
 /* About Us */
 .person{display:grid;grid-template-columns:200px 1fr;gap:20px;margin:20px 0}
-.person img{display:block;width:100%}
+.person img{display:block;width:100%;height:200px;object-fit:cover}
 .person div{grid-column:2}
 .person p:first-child{margin-top:0}
 .person p:last-child{margin-bottom:0}
 .email_guard{display:none}
+
+#person-lics img{object-position:left}
+#person-aoyamarei img{object-position:center}
+#person-wongts img{object-position:bottom}
+#person-nghs{display:block}
 
 /* Publications */
 #publications li{margin-top:20px;margin-bottom:20px}
