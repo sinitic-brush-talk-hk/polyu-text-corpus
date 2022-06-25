@@ -77,3 +77,15 @@ corpus-sentence{display:block}
 
 /* Publications */
 #publications li{margin-top:20px;margin-bottom:20px}
+
+@media(max-width:720px) {
+    header{padding-top:10px}
+    header>.center_wrap{display:block}
+    header nav{background:#eee;margin:0 -20px -20px;padding:20px}
+    #logo{margin:auto}
+}
+@media(max-width:480px) {
+    header{padding-top:20px}
+    #logo{display:block;height:auto;width:auto}
+    #logo>*{margin:auto}
+}
