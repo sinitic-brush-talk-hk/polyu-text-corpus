@@ -69,3 +69,6 @@ corpus-sentence{display:block}
 .person p:first-child{margin-top:0}
 .person p:last-child{margin-bottom:0}
 .email_guard{display:none}
+
+/* Publications */
+#publications li{margin-top:20px;margin-bottom:20px}
