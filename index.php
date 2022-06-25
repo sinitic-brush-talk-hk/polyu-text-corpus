@@ -17,7 +17,7 @@ $allContent = Content::getAll();
 <header>
 	<div class=center_wrap>
 		<div id=logo>
-			(Logo)
+			<img src="images/polyu.png" id=logo1><img src="images/cbs.png" id=logo2>
 		</div>
 		<nav>
 			<a href="index.html">Corpus Search</a>
