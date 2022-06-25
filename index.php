@@ -24,7 +24,7 @@ $allContent = Content::getAll();
 			<a href="about-us.html">About Us</a>
 			<a href="introduction.html">Introduction</a>
 			<a href="user-guide.html">User Guide</a>
-			<a href="contact-us.html">Contact Us</a>
+			<a href="publications.html">Our Publications</a>
 		</nav>
 	</div>
 </header>
