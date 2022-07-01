@@ -30,6 +30,11 @@ $allContent = Content::getAll();
 	</div>
 </header>
 
+<div class=page-title>
+	<div lang=zh-HK>《宮崎滔天家藏：來自日本的中國革命文獻》資料庫</div>
+	<div lang=en>A corpus of Miyazaki Touten’s family collection: Documents on Chinese October Revolution from Japan</div>
+</div>
+
 <div class=content>
 	<div class=center_wrap>
 		<aside>

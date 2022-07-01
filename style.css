@@ -29,6 +29,10 @@ header>.center_wrap{display:grid;grid-template-columns: auto 1fr;gap:20px}
 #logo2{display:block;height:80px}
 nav{justify-self:end}
 
+.page-title{background:darksalmon;padding:20px}
+.page-title div{font-size:24px;line-height:28px;margin:0;font-weight:normal}
+.page-title div:lang(zh-HK){font-size:32px;line-height:36px;text-indent:-16px;margin-bottom:4px} /* force hanging punctuation */
+
 /* Corpus Page */
 .client{background:rgb(237 226 194)}
 .content{padding:20px}
