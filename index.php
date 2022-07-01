@@ -318,8 +318,8 @@ function htmlspecialchars(text) {
   return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 }
 
-const sources = <?=json_encode($allSources)?>;
-const content = <?=json_encode($allContent)?>;
+const sources = <?=json_encode($allSources, JSON_UNESCAPED_UNICODE)?>;
+const content = <?=json_encode($allContent, JSON_UNESCAPED_UNICODE)?>;
 let lastTimer = 0;
 
 filter.addEventListener('input', (e) => {
