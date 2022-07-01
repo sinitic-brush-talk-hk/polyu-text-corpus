@@ -89,4 +89,8 @@ corpus-sentence{display:block}
     header{padding-top:20px}
     #logo{display:block;height:auto;width:auto}
     #logo>a>img{margin:auto}
+
+    .person{display:grid;grid-template-columns:initial}
+    .person img{width:200px;height:200px}
+    .person div{grid-column:initial}
 }
