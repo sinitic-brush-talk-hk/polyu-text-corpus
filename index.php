@@ -8,7 +8,7 @@ $allContent = Content::getAll();
 ?>
 <!doctype html>
 <meta charset=utf-8>
-<title>User Site</title>
+<title>A corpus of Miyazaki Touten’s family collection</title>
 <!--link href="style.css" rel=stylesheet-->
 <style><?=file_get_contents('style.css')?></style>
 <script src="dist/xlsx.mini.min.js"></script>
