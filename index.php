@@ -2,6 +2,7 @@
 declare(strict_types = 1);
 require 'lib.php';
 
+ob_start();
 $allSources = Source::getAll();
 $allContent = Content::getAll();
 
@@ -9,8 +10,7 @@ $allContent = Content::getAll();
 <!doctype html>
 <meta charset=utf-8>
 <title>A corpus of Miyazaki Touten’s family collection</title>
-<!--link href="style.css" rel=stylesheet-->
-<style><?=file_get_contents('style.css')?></style>
+<link href="style.css" rel=stylesheet>
 <script src="dist/xlsx.mini.min.js"></script>
 <body class=client>
 
@@ -354,3 +354,8 @@ function update() {
 
 update();
 </script>
+<?php
+
+$html = ob_get_clean();
+file_put_contents('index.html', $html);
+echo $html;
