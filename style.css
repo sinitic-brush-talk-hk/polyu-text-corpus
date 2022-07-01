@@ -23,10 +23,10 @@ tr:nth-child(2n){background:#eee}
 .center_wrap{max-width:980px;margin:0 auto}
 header{background:white;padding:20px}
 header>.center_wrap{display:grid;grid-template-columns: auto 1fr;gap:20px}
-#logo{width:400px;height:80px;display:flex;align-items:center;gap:10px}
+#logo{width:400px;height:88px;display:flex;align-items:center;gap:10px}
 #logo a{display:block}
 #logo1{display:block;height:54px}
-#logo2{display:block;height:80px}
+#logo2{display:block;height:88px}
 nav{justify-self:end}
 
 .page-title{background:darksalmon;padding:20px}
