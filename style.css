@@ -43,8 +43,9 @@ aside input{padding:12px;font-size:20px;border:1px solid #ccc;border-radius:4px;
 .update_desc{font-size:13px;padding:0 8px}
 main{background:#fff;padding:32px;border-radius:20px}
 
+#result h1{margin:0 0 8px;grid-column:1 / 3}
+
 corpus-search-result-list{display:grid;grid-template-columns:auto 1fr}
-corpus-search-result-list h1{margin:0 0 8px;grid-column:1 / 3}
 .search_result_info{color:#999}
 .search_result_list{grid-column:1 / 3}
 
