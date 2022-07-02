@@ -20,7 +20,7 @@ tr:nth-child(2n){background:#eee}
 .sentence_analysis td{white-space:nowrap}
 
 /* Client (Shared) */
-.center_wrap{max-width:980px;margin:0 auto}
+.center_wrap{max-width:1280px;margin:0 auto}
 header{background:white;padding:20px}
 header>.center_wrap{display:grid;grid-template-columns: auto 1fr;gap:20px}
 #logo{width:400px;height:88px;display:flex;align-items:center;gap:10px}
@@ -30,8 +30,8 @@ header>.center_wrap{display:grid;grid-template-columns: auto 1fr;gap:20px}
 nav{justify-self:end}
 
 .page-title{background:darksalmon;padding:20px}
-.page-title div{font-size:24px;line-height:28px;margin:0;font-weight:normal}
-.page-title div:lang(zh-HK){font-size:32px;line-height:36px;text-indent:-16px;margin-bottom:4px} /* force hanging punctuation */
+.page-title>div>div{font-size:24px;line-height:28px;margin:0;font-weight:normal}
+.page-title>div>div:lang(zh-HK){font-size:32px;line-height:36px;text-indent:-16px;margin-bottom:4px} /* force hanging punctuation */
 
 /* Corpus Page */
 .client{background:rgb(237 226 194)}
