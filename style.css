@@ -83,16 +83,28 @@ corpus-sentence{display:block}
 /* Publications */
 #publications li{margin-top:20px;margin-bottom:20px}
 
+@media(max-width:1320px) {
+    .center_wrap{max-width:980px}
+    .page-title>div>div{font-size:20px;line-height:24px}
+    .page-title>div>div:lang(zh-HK){font-size:28px;line-height:32px;text-indent:-14px}
+}
+
 @media(max-width:720px) {
     header{padding-top:10px}
     header>.center_wrap{display:block}
     header nav{background:#eee;margin:0 -20px -20px;padding:20px}
     #logo{margin:auto}
+
+    .page-title>div>div{font-size:16px;line-height:20px}
+    .page-title>div>div:lang(zh-HK){font-size:20px;line-height:24px;text-indent:-10px}
 }
 @media(max-width:480px) {
     header{padding-top:20px}
     #logo{display:block;height:auto;width:auto}
     #logo>a>img{margin:auto}
+
+    .page-title>div>div{font-size:13px;line-height:16px}
+    .page-title>div>div:lang(zh-HK){font-size:16px;line-height:20px;text-indent:-8px}
 
     .person{display:grid;grid-template-columns:initial}
     .person img{width:200px;height:200px}
