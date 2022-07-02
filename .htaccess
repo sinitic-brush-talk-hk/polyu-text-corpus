@@ -1,0 +1,6 @@
+<FilesMatch "\.(jpg|png)$">
+Header set cache-control "public, max-age=31536000, immutable"
+</FilesMatch>
+<FilesMatch "\.(css)$">
+Header set cache-control "public, max-age=3600, immutable"
+</FilesMatch>
