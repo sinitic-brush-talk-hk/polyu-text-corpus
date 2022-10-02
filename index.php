@@ -46,6 +46,22 @@ $allContent = Content::getAll();
 		</main>
 	</div>
 </div>
+
+<footer id=footer>
+	<div class=center_wrap>
+		<div id=footer-logo>
+			<img src="images/polyu.png" id=logo1>
+			<img src="images/cbs.png" id=logo2>
+		</div>
+		<div id=footer-copyright>
+			© 2022 香港理工大學 版權所有
+		</div>
+		<div id=footer-last-updated>
+			最後更新日期：2022年10月3日
+		</div>
+	</div>
+</footer>
+
 <script>
 class CorpusSearchResultList extends HTMLElement {
 	constructor() {

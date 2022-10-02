@@ -33,6 +33,13 @@ header{background:white;display:grid;grid-template-columns:88px 1fr auto;gap:20p
 .page-title>div>div{font-size:24px;line-height:28px;margin:0;font-weight:normal}
 .page-title>div>div:lang(zh-HK){font-size:32px;line-height:36px;text-indent:-16px;margin-bottom:4px} /* force hanging punctuation */
 
+#footer{text-align:center;border-top:1px solid #ccc;padding-top:8px}
+#footer-logo{display:flex;justify-content:center;align-items:center;gap:20px}
+#logo1{display:block;height:50px}
+#logo2{display:block;height:96px}
+#footer-copyright{color:#999;margin:4px}
+#footer-last-updated{color:#999;margin:4px}
+
 /* Corpus Page */
 .content{padding:20px}
 .content>.center_wrap{display:grid;grid-template-columns:280px 1fr;gap:20px}
