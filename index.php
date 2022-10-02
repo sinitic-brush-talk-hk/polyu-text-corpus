@@ -15,19 +15,15 @@ $allContent = Content::getAll();
 <body class=client>
 
 <header>
-	<div class=center_wrap>
-		<div id=logo>
-			<a href="https://www.polyu.edu.hk/en/" target=_blank><img src="images/polyu.png" id=logo1></a>
-			<a href="https://www.polyu.edu.hk/cbs/" target=_blank><img src="images/cbs.png" id=logo2></a>
-		</div>
-		<nav>
-			<a href="index.html">Corpus Search</a>
-			<a href="about-us.html">About Us</a>
-			<a href="introduction.html">Introduction</a>
-			<a href="brush-talk.html">Sinitic Brushtalk</a>
-			<a href="publications.html">Our Publications</a>
-		</nav>
-	</div>
+	<a href="https://www.polyu.edu.hk/en/" target=_blank id=logo><img src="images/polyu-logo.png"></a>
+	<nav id=nav>
+		<a href="index.html">Corpus Search</a>
+		<a href="about-us.html">About Us</a>
+		<a href="introduction.html">Introduction</a>
+		<a href="brush-talk.html">Sinitic Brushtalk</a>
+		<a href="publications.html">Our Publications</a>
+	</nav>
+	<a href="https://www.polyu.edu.hk/en/" target=_blank id=tongue><img src="images/polyu-tongue.png"></a>
 </header>
 
 <div class=page-title>

@@ -21,20 +21,19 @@ tr:nth-child(2n){background:#eee}
 
 /* Client (Shared) */
 .center_wrap{max-width:1280px;margin:0 auto}
-header{background:white;padding:20px}
-header>.center_wrap{display:grid;grid-template-columns: auto 1fr;gap:20px}
-#logo{width:400px;height:88px;display:flex;align-items:center;gap:10px}
-#logo a{display:block}
-#logo1{display:block;height:54px}
-#logo2{display:block;height:88px}
-nav{justify-self:end}
+header{background:white;display:grid;grid-template-columns:88px 1fr auto;gap:20px}
+#logo{display:block;width:48px;height:48px;margin:8px 0;justify-self:end}
+#logo>img{display:block;width:48px;height:48px}
+#nav{padding:20px 0;display:flex;gap:10px}
+#nav>a{color:#666;text-decoration:none;font-size:24px;line-height:24px}
+#tongue{display:block;justify-self:end}
+#tongue>img{height:58px}
 
-.page-title{background:darksalmon;padding:20px}
+.page-title{padding:20px}
 .page-title>div>div{font-size:24px;line-height:28px;margin:0;font-weight:normal}
 .page-title>div>div:lang(zh-HK){font-size:32px;line-height:36px;text-indent:-16px;margin-bottom:4px} /* force hanging punctuation */
 
 /* Corpus Page */
-.client{background:rgb(237 226 194)}
 .content{padding:20px}
 .content>.center_wrap{display:grid;grid-template-columns:280px 1fr;gap:20px}
 
