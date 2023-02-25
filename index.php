@@ -58,7 +58,7 @@ $allContent = Content::getAll();
 			© 2022 香港理工大學 版權所有
 		</div>
 		<div id=footer-last-updated>
-			最後更新日期：2022年10月3日
+			最後更新日期：2023年02月26日
 		</div>
 	</div>
 </footer>
