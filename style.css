@@ -5,6 +5,7 @@ td{vertical-align:top}
 [hidden]{display:none}
 a,a:visited{color:#007bff}
 hr{border-top-color:rgba(0,0,0,.2);border-width:1px 0 0}
+u{text-underline-offset:4px}
 
 /* Admin */
 table{border:1px solid #ccc;border-collapse:collapse;width:100%}
