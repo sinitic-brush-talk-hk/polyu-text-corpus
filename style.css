@@ -26,7 +26,7 @@ header{background:white;display:grid;grid-template-columns:88px 1fr auto;gap:20p
 #logo{display:block;width:48px;height:48px;margin:8px 0;justify-self:end}
 #logo>img{display:block;width:48px;height:48px}
 #nav{padding:20px 0;display:flex;gap:24px}
-#nav>a{color:#666;text-decoration:none;font-size:24px;line-height:24px}
+#nav>a{color:#666;text-decoration:none;font-size:20px;line-height:24px}
 #nav>a:hover{outline:1px solid #666;outline-offset:8px}
 #tongue{display:block;justify-self:end}
 #tongue>img{display:block;height:64px}

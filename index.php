@@ -22,6 +22,7 @@ $allContent = Content::getAll();
 		<a href="introduction.html">Introduction</a>
 		<a href="brush-talk.html">Sinitic Brushtalk</a>
 		<a href="publications.html">Our Publications</a>
+		<a href="choepu.html">Ch'oe Pu</a>
 	</nav>
 	<a href="https://www.polyu.edu.hk/en/" target=_blank id=tongue><img src="images/polyu-tongue.png"></a>
 </header>
