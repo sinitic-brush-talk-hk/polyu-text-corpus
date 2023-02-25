@@ -207,7 +207,7 @@ class CorpusSearchResultList extends HTMLElement {
 			list.appendChild(html);
 		});
 
-		list.insertAdjacentHTML('beforeend', `<div>Query completed in ${this.elapsedTime} ms</div>`);
+		// list.insertAdjacentHTML('beforeend', `<div>Query completed in ${this.elapsedTime} ms</div>`);
 	}
 
 	exportResults() {
