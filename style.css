@@ -55,6 +55,8 @@ main{background:inherit;padding:0 32px;min-height:calc(100vh - 388px)}
 #result h1{margin:0 0 8px;grid-column:1 / 3}
 
 corpus-search-result-list{display:grid;grid-template-columns:auto 1fr}
+.search_export{font-size:18px;padding:4px 20px}
+
 .search_result_info{color:#999}
 .search_result_list{grid-column:1 / 3}
 
@@ -97,7 +99,7 @@ corpus-sentence{display:block}
 #person-nghs img{object-position:center -36px}
 
 /* Brush Talk */
-#brush-talk{background:#fff;font-family:'Times New Roman', serif}
+#brush-talk{background:#fff;font-family:'Times New Roman', serif;font-size:18px}
 #brush-talk>.center_wrap{max-width:768px}
 #brush-talk li{margin-top:8px;margin-bottom:8px}
 #brush-talk table tr{background:initial !important}

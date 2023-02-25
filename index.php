@@ -39,7 +39,7 @@ $allContent = Content::getAll();
 		<aside>
 			<input type=text id=filter placeholder="關鍵詞">
 			<div class=filter_desc>輸入字、詞或拼音</div>
-			<div class=update_desc>(瀏覽最新版本，請先清除「瀏覽記錄」)</div>
+			<div class=update_desc>(欲瀏覽最新版本，請先清除「瀏覽記錄」)</div>
 		</aside>
 
 		<main>
