@@ -4,6 +4,7 @@ th{text-align:inherit;vertical-align:top}
 td{vertical-align:top}
 [hidden]{display:none}
 a,a:visited{color:#007bff}
+hr{border-top-color:rgba(0,0,0,.2);border-width:1px 0 0}
 
 /* Admin */
 table{border:1px solid #ccc;border-collapse:collapse;width:100%}
@@ -24,11 +25,11 @@ tr:nth-child(2n){background:#eee}
 header{background:white;display:grid;grid-template-columns:88px 1fr auto;gap:20px}
 #logo{display:block;width:48px;height:48px;margin:8px 0;justify-self:end}
 #logo>img{display:block;width:48px;height:48px}
-#nav{padding:20px 0;display:flex;gap:16px}
+#nav{padding:20px 0;display:flex;gap:24px}
 #nav>a{color:#666;text-decoration:none;font-size:24px;line-height:24px}
 #nav>a:hover{outline:1px solid #666;outline-offset:8px}
 #tongue{display:block;justify-self:end}
-#tongue>img{height:58px}
+#tongue>img{display:block;height:64px}
 
 .page-title{padding:20px}
 .page-title>div>div{font-size:24px;line-height:28px;margin:0;font-weight:normal}
@@ -87,6 +88,12 @@ corpus-sentence{display:block}
 #person-aoyamarei img{object-position:center}
 #person-wongts img{object-position:top}
 #person-nghs img{object-position:center -36px}
+
+/* Brush Talk */
+#brush-talk{background:#fff;font-family:'Times New Roman', serif}
+#brush-talk>.center_wrap{max-width:768px}
+#brush-talk li{margin-top:8px;margin-bottom:8px}
+#brush-talk table tr{background:initial !important}
 
 /* Publications */
 #publications li{margin-top:20px;margin-bottom:20px}
