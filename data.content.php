@@ -6,7 +6,7 @@ class Content {
 	public int $source_id;
 	public int $sentence_id;
 	public ?string $content_type;
-	public ?object $path;
+	public ?object $content;
 
 	public function __construct($data) {
 		$this->id = (int) $data->id;
