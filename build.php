@@ -377,6 +377,69 @@ update();
 </script>
 <?php
 
+$directories = [
+	'build',
+	'build/dist',
+	'build/images',
+	'build/images/brushtalk.files',
+];
+
+foreach ($directories as $dir) {
+	if (!file_exists($dir)) {
+		mkdir($dir);
+	}
+}
+
 $html = ob_get_clean();
-file_put_contents('index.html', $html);
-echo $html;
+file_put_contents('build/index.html', $html);
+
+$filesToCopy = [
+	'.htaccess',
+	'about-us.html',
+	'brush-talk.html',
+	'choepu.html',
+	'introduction.html',
+	'publications.html',
+	'style.css',
+	'dist/xlsx.mini.min.js',
+	'dist/xlsx.mini.min.map',
+	...glob('images/*.jpg'),
+	...glob('images/*.png'),
+	...glob('images/brushtalk.files/*.jpg'),
+	...glob('images/brushtalk.files/*.gif'),
+	...glob('images/brushtalk.files/*.png'),
+];
+
+$filesToCopy = array_filter($filesToCopy, function($o) {
+	return $o !== 'images/cbs_original.png';
+});
+
+foreach ($filesToCopy as $file) {
+	file_put_contents("build/$file", file_get_contents($file));
+}
+
+// Source: https://stackoverflow.com/a/4914807
+$rootPath = realpath('build');
+$zip = new ZipArchive();
+$zip->open('build.zip', ZipArchive::CREATE | ZipArchive::OVERWRITE);
+
+$files = new RecursiveIteratorIterator(
+    new RecursiveDirectoryIterator($rootPath),
+    RecursiveIteratorIterator::LEAVES_ONLY
+);
+
+foreach ($files as $name => $file) {
+    if (!$file->isDir()) {
+        $filePath = $file->getRealPath();
+        $relativePath = substr($filePath, strlen($rootPath) + 1);
+        $zip->addFile($filePath, $relativePath);
+    }
+}
+
+$zip->close();
+
+header("Content-Type: application/zip");
+header("Content-Transfer-Encoding: Binary");
+header("Content-Length: " . filesize('build.zip'));
+header("Content-Disposition: attachment; filename=brushtalk-" . date('YmdHis') . ".zip");
+echo file_get_contents('build.zip');
