@@ -2,6 +2,8 @@
 declare(strict_types = 1);
 require 'lib.php';
 
+ini_set('memory_limit', '' . (512 * 1024 * 1024));
+
 use \PhpOffice\PhpSpreadsheet\IOFactory;
 
 if (!isset($_GET['source'])) {
