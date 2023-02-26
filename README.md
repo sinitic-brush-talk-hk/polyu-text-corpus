@@ -8,7 +8,9 @@
 
 ## Build
 
-1. Clone from GitHub
+You need to regenerate the static website after making any changes.
+
+1. Clone from GitHub to a local directory.
 
 2. Run in terminal:
 
@@ -18,3 +20,7 @@
    ```
 
 3. Visit `http://localhost:8004/`.
+
+4. Click on 'Build and download zip'.
+
+5. Upload contents of the zip to destination server.

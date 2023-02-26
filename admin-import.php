@@ -94,15 +94,17 @@ if (isset($_POST['execute'])) {
 <title>Import Data</title>
 <link href="style.css" rel=stylesheet>
 
+<body class=admin>
 <h1>匯入資料</h1>
-<p>
-	ID: <?=htmlspecialchars(isset($source->id) ? ($source->id . '') : '(null)');?><br>
-	Name: <?=htmlspecialchars($source->name ?: '(null)');?><br>
-	Description: <?=htmlspecialchars($source->desc ?: '(null)');?><br>
-	Path: <?=htmlspecialchars($source->path ?: '(null)')?>
-</p>
+<table class=simple>
+	<col width=200><col>
+	<tr><th>ID</th><td><?=htmlspecialchars(isset($source->id) ? ($source->id . '') : '(null)');?></td>
+	<tr><th>Name</th><td><?=htmlspecialchars($source->name ?: '(null)');?></td>
+	<tr><th>Description</th><td><?=htmlspecialchars($source->desc ?: '(null)');?></td>
+	<tr><th>Path</th><td><?=htmlspecialchars($source->path ?: '(null)')?></td>
+</table>
 
-<form method=post><input type=submit value="確認匯入"><input type=hidden name=execute value=yes></form>
+<form method=post><input type=submit value="確認匯入" title="會自動覆寫已有資料"><input type=hidden name=execute value=yes></form>
 
 <?php
 
@@ -142,3 +144,7 @@ foreach ($chunked as $sentenceData) {
 	echo '</div>';
 	echo '</div>';
 }
+
+?>
+
+<a href="admin-list-sources.php">返回資料集</a>
