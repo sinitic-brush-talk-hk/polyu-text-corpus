@@ -1,0 +1,30 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      COMPOSER_NO_DEV: 1
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: 8.2
+
+      - name: Install Composer packages
+        uses: "ramsey/composer-install@v2"
+
+      - name: Build files
+        run: php build.php > build.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: brushtalk
+          path: build.zip
