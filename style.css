@@ -113,6 +113,10 @@ corpus-sentence{display:block}
 /* Publications */
 #publications li{margin-top:20px;margin-bottom:20px}
 
+/* Choe Pu */
+#choe-pu-posters{display:flex;gap:20px}
+#choe-pu-posters img{display:block;width:auto;height:auto;min-width:0}
+
 @media(max-width:1320px) {
     .center_wrap{max-width:980px}
     .page-title>div>div{font-size:20px;line-height:24px}
@@ -139,4 +143,6 @@ corpus-sentence{display:block}
     .person{display:grid;grid-template-columns:initial}
     .person img{width:200px;height:200px}
     .person div{grid-column:initial}
+
+    #choe-pu-posters{display:flex;flex-wrap:wrap}
 }
