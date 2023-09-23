@@ -114,6 +114,9 @@ corpus-sentence{display:block}
 #publications li{margin-top:20px;margin-bottom:20px}
 
 /* Choe Pu */
+#choe-pu-video{margin-bottom:20px}
+#choe-pu-video iframe{width:100%;height:auto;aspect-ratio:16 / 9}
+
 #choe-pu-posters{display:flex;gap:20px}
 #choe-pu-posters img{display:block;width:auto;height:auto;min-width:0}
 
