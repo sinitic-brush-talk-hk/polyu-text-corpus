@@ -119,6 +119,7 @@ corpus-sentence{display:block}
 #choe-pu-video-caption{padding:4px 12px}
 
 #choe-pu-posters{display:flex;gap:20px}
+#choe-pu-posters a{display:flex;min-width:0}
 #choe-pu-posters img{display:block;width:auto;height:auto;min-width:0}
 
 @media(max-width:1320px) {

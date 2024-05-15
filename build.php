@@ -405,6 +405,7 @@ $filesToCopy = [
 	'dist/xlsx.mini.min.map',
 	...glob('images/*.jpg'),
 	...glob('images/*.png'),
+	...glob('images/*.pdf'),
 	...glob('images/brushtalk.files/*.jpg'),
 	...glob('images/brushtalk.files/*.gif'),
 	...glob('images/brushtalk.files/*.png'),
