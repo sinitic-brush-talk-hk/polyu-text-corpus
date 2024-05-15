@@ -33,13 +33,7 @@ jobs:
         uses: "ramsey/composer-install@v2"
 
       - name: Build files
-        run: php build.php > build.zip
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: brushtalk
-          path: build.zip
+        run: php build.php > /dev/null
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
