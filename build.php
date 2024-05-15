@@ -55,10 +55,10 @@ $allContent = Content::getAll();
 			<img src="images/cbs.png" id=logo2>
 		</div>
 		<div id=footer-copyright>
-			© 2022 香港理工大學 版權所有
+			© 2023 香港理工大學 版權所有
 		</div>
 		<div id=footer-last-updated>
-			最後更新日期：2023年02月26日
+			最後更新日期：2023年09月23日
 		</div>
 	</div>
 </footer>
