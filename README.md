@@ -6,9 +6,15 @@
 
 2. Upload back to GitHub using "Add file" > "Upload files", then press commit.
 
-## Build
+## Deployment
 
-You need to regenerate the static website after making any changes.
+Any commits made to this repository will automatically be deployed to https://sinitic-brush-talk-hk.github.io/polyu-text-corpus/ via GitHub actions.
+
+To deploy to an external server, download the generated zip file in the “Artifacts” section of the newest workflow run on the actions tab.
+
+## Development
+
+When developing locally, you need to regenerate the static website after making any changes.
 
 1. Clone from GitHub to a local directory.
 
@@ -23,4 +29,4 @@ You need to regenerate the static website after making any changes.
 
 4. Click on 'Build and download zip'.
 
-5. Upload contents of the zip to destination server.
+5. Upload contents of the zip to destination server (if required), or preview the changes at `http://localhost:8004/build/`.
