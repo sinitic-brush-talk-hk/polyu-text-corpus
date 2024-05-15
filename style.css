@@ -136,6 +136,7 @@ corpus-sentence{display:block}
     .page-title>div>div{font-size:16px;line-height:20px}
     .page-title>div>div:lang(zh-HK){font-size:20px;line-height:24px;text-indent:-10px}
 }
+
 @media(max-width:480px) {
     header{padding-top:20px}
     #logo{display:block;height:auto;width:auto}
